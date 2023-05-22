@@ -1,0 +1,57 @@
+---
+import 'swiper/css'
+import 'swiper/css/pagination'
+
+export interface Props {
+	img_srcs: Array<string>;
+}
+
+const { img_srcs } = Astro.props;
+
+---
+
+<style is:inline>
+.carousel-swiper-pagination > .swiper-pagination-bullet {
+    display: block !important;
+    border-radius: 0;
+    height: 2px;
+    width: auto;
+    max-width: 2rem;
+    flex-grow: 1;
+    opacity: 0.8;
+    margin: 0 !important;
+    background-color: #82827C;
+}
+
+.carousel-swiper-pagination > .swiper-pagination-bullet-active {
+    background-color: #121212
+}
+</style>
+
+<div class="carousel-swiper flex flex-col">
+    <div class="swiper-wrapper">
+        { img_srcs.map((img) => (
+            <div class="swiper-slide">
+                <img class="rounded-3xl" src={img} />
+            </div>
+        ))}
+    </div>
+    <div class="carousel-swiper-pagination mt-8 flex justify-center"></div>
+</div>
+
+<script>
+const carousel_swiper = new Swiper('.carousel-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    watchOverflow: false,
+    pagination: {
+        el: ".carousel-swiper-pagination",
+    },
+    breakpoints: {
+        1024: {
+            slidesPerView: 5,
+            spaceBetween: 10,
+        }
+    }
+})
+</script>
