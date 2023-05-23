@@ -22,9 +22,20 @@ const butterfly_description =
 const ending_description =
 	"MAVERICK passionately champions the idea of empowering wearers to exude utmost comfort and confidence, transcending all occasions. Be yourself, be classic";
 
-const carousel_imgs: Array<ImageMetadata> = await Astro.glob("../assets/images/swipe_*.jpg").then(
-	files => { return files.map(file => file.default); }
-);
+const carousel_imgs: Array<ImageMetadata> = await Astro.glob(
+	"../assets/images/swipe_*.jpg"
+).then((files) => {
+	return files.map((file) => file.default);
+});
+
+const featured_imgs: Array<ImageMetadata> = await Astro.glob(
+	"../assets/images/main_*.jpg"
+).then((files) => {
+	return files.map((file) => file.default);
+});
+
+import BannerImg1 from "../assets/images/wide_1.jpg";
+import BannerImg2 from "../assets/images/wide_2.jpg";
 ---
 
 <Layout title="Maverick Jewellery Official">
@@ -39,7 +50,7 @@ const carousel_imgs: Array<ImageMetadata> = await Astro.glob("../assets/images/s
 				</div>
 			</div>
 			<div class="whitespace block h-14"></div>
-			<WideImage img_src={"/images/wide_1.jpg"} />
+			<WideImage img={BannerImg1} />
 			<div class="whitespace block h-16"></div>
 			<div class="max-w-[85%] md:flex mx-auto md:prose">
 				<p class="text-xl text-center font-serif text-black">
@@ -47,16 +58,14 @@ const carousel_imgs: Array<ImageMetadata> = await Astro.glob("../assets/images/s
 				</p>
 			</div>
 			<div class="whitespace block h-16"></div>
-			<Carousel
-				imgs={carousel_imgs}
-			/>
+			<Carousel imgs={carousel_imgs} />
 			<div class="whitespace block h-16"></div>
-			<WideImage img_src={"/images/wide_2.jpg"} />
+			<WideImage img={BannerImg2} />
 			<div class="whitespace h-28"></div>
 			<Featured
 				heading="Butterfly"
 				description={butterfly_description}
-				img_srcs={["/images/main_1.jpg", "/images/main_2.jpg"]}
+				imgs={featured_imgs}
 			/>
 			<div class="whitespace block h-28"></div>
 			<div class="max-w-[85%] md:flex mx-auto md:prose">

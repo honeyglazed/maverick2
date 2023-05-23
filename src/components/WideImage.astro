@@ -1,14 +1,20 @@
 ---
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from "astro";
+
 export interface Props {
-    img_src: string;
+    img: ImageMetadata;
 }
 
-const { img_src } = Astro.props;
+const { img } = Astro.props;
 ---
 
+<style>
+    img {
+        @apply rounded-3xl drop-shadow-lg object-cover
+    }
+</style>
+
 <div class="mx-auto md:flex h-full w-auto md:max-h-[36rem] md:max-w-screen-lg">
-    <img
-        class="rounded-3xl drop-shadow-lg object-cover"
-        src={ img_src }
-    />
+    <Image src={img} alt={"picture"}/>
 </div>
