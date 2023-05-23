@@ -1,12 +1,14 @@
 ---
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from "astro";
 import "swiper/css";
 import "swiper/css/pagination";
 
 export interface Props {
-    img_srcs: Array<string>;
+    imgs: Array<ImageMetadata>;
 }
 
-const { img_srcs } = Astro.props;
+const { imgs } = Astro.props;
 ---
 
 <style is:inline>
@@ -27,12 +29,18 @@ const { img_srcs } = Astro.props;
     }
 </style>
 
+<style>
+    img {
+        @apply rounded-3xl
+    }
+</style>
+
 <div class="carousel-swiper flex flex-col overflow-hidden">
     <div class="swiper-wrapper">
         {
-            img_srcs.map((img) => (
+            imgs.map((img) => (
                 <div class="swiper-slide">
-                    <img class="rounded-3xl" src={img} />
+                    <Image src={img} width={500} alt={'picture'}/>
                 </div>
             ))
         }

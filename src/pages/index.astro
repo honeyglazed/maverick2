@@ -21,6 +21,10 @@ const butterfly_description =
 
 const ending_description =
 	"MAVERICK passionately champions the idea of empowering wearers to exude utmost comfort and confidence, transcending all occasions. Be yourself, be classic";
+
+const carousel_imgs: Array<ImageMetadata> = await Astro.glob("../assets/images/swipe_*.jpg").then(
+	files => { return files.map(file => file.default); }
+);
 ---
 
 <Layout title="Maverick Jewellery Official">
@@ -44,13 +48,7 @@ const ending_description =
 			</div>
 			<div class="whitespace block h-16"></div>
 			<Carousel
-				img_srcs={[
-					"/images/swipe_1.jpg",
-					"/images/swipe_2.jpg",
-					"/images/swipe_3.jpg",
-					"/images/swipe_4.jpg",
-					"/images/swipe_5.jpg",
-				]}
+				imgs={carousel_imgs}
 			/>
 			<div class="whitespace block h-16"></div>
 			<WideImage img_src={"/images/wide_2.jpg"} />
