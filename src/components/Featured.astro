@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
 export interface Props {
@@ -19,7 +19,9 @@ const { heading, description, imgs } = Astro.props;
             <div class="swiper-wrapper">
                 {
                     imgs.map((img) => (
-                        <Image src={img} alt={"picture"} quality={"mid"}/>
+                        <div class="swiper-slide">
+                            <Image src={img} alt={"picture"} quality={"mid"} />
+                        </div>
                     ))
                 }
             </div>
