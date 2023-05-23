@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Carousel from "../components/Carousel.astro";
 import Featured from "../components/Featured.astro";
 import WideImage from "../components/WideImage.astro";
+import type { ImageMetadata } from "astro";
 
 const introduction =
 	"Drawing inspiration from the graceful Renban Orchid \
@@ -34,7 +35,7 @@ const ending_description =
 				</div>
 			</div>
 			<div class="whitespace block h-14"></div>
-			<WideImage img_src={"src/images/wide_1.jpg"} />
+			<WideImage img_src={"/images/wide_1.jpg"} />
 			<div class="whitespace block h-16"></div>
 			<div class="max-w-[85%] md:flex mx-auto md:prose">
 				<p class="text-xl text-center font-serif text-black">
@@ -44,20 +45,20 @@ const ending_description =
 			<div class="whitespace block h-16"></div>
 			<Carousel
 				img_srcs={[
-					"src/images/swipe_1.jpg",
-					"src/images/swipe_2.jpg",
-					"src/images/swipe_3.jpg",
-					"src/images/swipe_4.jpg",
-					"src/images/swipe_5.jpg",
+					"/images/swipe_1.jpg",
+					"/images/swipe_2.jpg",
+					"/images/swipe_3.jpg",
+					"/images/swipe_4.jpg",
+					"/images/swipe_5.jpg",
 				]}
 			/>
 			<div class="whitespace block h-16"></div>
-			<WideImage img_src={"src/images/wide_2.jpg"} />
+			<WideImage img_src={"/images/wide_2.jpg"} />
 			<div class="whitespace h-28"></div>
 			<Featured
 				heading="Butterfly"
 				description={butterfly_description}
-				img_srcs={["src/images/main_1.jpg", "src/images/main_2.jpg"]}
+				img_srcs={["/images/main_1.jpg", "/images/main_2.jpg"]}
 			/>
 			<div class="whitespace block h-28"></div>
 			<div class="max-w-[85%] md:flex mx-auto md:prose">
