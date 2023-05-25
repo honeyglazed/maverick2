@@ -5,6 +5,7 @@ module.exports = {
 		fontFamily: {
 			'serif': [
 				'"Cormorant Garamond"', 
+				'"Noto Serif SC"',
 				'ui-serif', 
 				'Georgia', 'Cambria', 
 				'"Times New Roman"', 

@@ -1,0 +1,20 @@
+<button
+    id="language-toggle"
+    type="button"
+    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm"
+>
+    <span id="language-toggle-icon">EN | 中</span>
+</button>
+
+<script>
+// Hacky. Fix this to be generic.
+var toggle = document.getElementById('language-toggle');
+toggle.addEventListener('click', function() {
+    const pathname = window.location.pathname;
+    if (pathname.includes("/en")) {
+        window.location.href = "/cn";
+    } else {
+        window.location.href = "/en";
+    }
+});
+</script>
