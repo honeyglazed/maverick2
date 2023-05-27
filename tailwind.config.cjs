@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
@@ -6,11 +9,12 @@ module.exports = {
 			'serif': [
 				'"Cormorant Garamond"', 
 				'"Noto Serif SC"',
-				'ui-serif', 
-				'Georgia', 'Cambria', 
-				'"Times New Roman"', 
-				'Times', 
-				'serif'
+				defaultTheme.fontFamily.serif,
+			],
+			'sans': [
+				'"Noto Sans"',
+				'"Noto Sans SC',
+				defaultTheme.fontFamily.sans,
 			]
 		},
 		extend: {

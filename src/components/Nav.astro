@@ -1,11 +1,20 @@
 ---
-import LanuguagePicker from "./LanguagePicker.astro";
+import { getLangFromUrl, useTranslations } from '../i18n/translations';
+import LanuguagePicker from './LanguagePicker.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<nav class="bg-off-white/80 fixed w-full z-20 top-0 left-0 border-b">
-  <div class="max-w-screen-xl grid grid-cols-3 mx-auto p-4">
-    <p class="font-serif text-center text-black font-bold col-start-2">MAVERICK</p>
-    <div class="col-start-3 justify-self-end">
+<nav class='bg-off-white/80 fixed w-full z-20 top-0 left-0 border-b'>
+  <div class='max-w-screen-xl grid grid-cols-3 mx-auto p-4'>
+    <div class='flex flex-row gap-x-5 text-sm font-bold text-gray-500 items-center font-sans'>
+      <p>{t('nav.about')}</p>
+      <p>{t('nav.brand')}</p>
+      <p>{t('nav.contact')}</p>
+    </div>
+    <p class='font-serif text-center text-black font-bold col-start-2'>MAVERICK</p>
+    <div class='col-start-3 justify-self-end'>
       <LanuguagePicker/>
     </div>
   </div>

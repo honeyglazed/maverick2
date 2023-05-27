@@ -1,0 +1,19 @@
+---
+import Layout from './Layout.astro';
+import type { ImageMetadata } from 'astro';
+import { getLangFromUrl, useTranslations } from '../i18n/translations';
+
+export interface Props {
+    description: string;
+    img: ImageMetadata;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const { description, img } = Astro.props;
+---
+
+<Layout title='About Us'>
+    <p>Brand Vision</p> 
+    <p>Connect With Us</p>
+</Layout>
