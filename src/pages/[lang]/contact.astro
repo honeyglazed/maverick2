@@ -1,0 +1,28 @@
+---
+import { useTranslations, getLangFromUrl } from "../../i18n/translations";
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+    return [
+        {params: { lang: 'en' }},
+        {params: { lang: 'cn' }},
+    ];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="Contact">
+    <main class="max-w-3x mx-auto py-12 min-h-screen bg-off-white">
+        <div class="container mx-auto px-2 md:px-0">
+            <ul>
+                <li>{t('social.wechat')}</li>
+                <li>{t('social.red')}</li>
+                <li>{t('social.tb')}</li>
+                <li>{t('social.ig')}</li>
+                <li>{t('social.fb')}</li>
+            </ul>
+        </div>
+    </main>
+</Layout>
