@@ -12,8 +12,9 @@ module.exports = {
 				defaultTheme.fontFamily.serif,
 			],
 			'sans': [
+				'"Roboto Condensed"',
 				'"Noto Sans"',
-				'"Noto Sans SC',
+				'"Noto Sans SC"',
 				defaultTheme.fontFamily.sans,
 			]
 		},

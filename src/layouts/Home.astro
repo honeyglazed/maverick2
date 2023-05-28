@@ -7,8 +7,8 @@ import type { ImageMetadata } from "astro";
 
 export interface Props {
 	introduction: string;
-    featured_summary: string;
-    closing_summary: string;
+	featured_summary: string;
+	closing_summary: string;
 }
 
 const { introduction, featured_summary, closing_summary } = Astro.props;
@@ -30,42 +30,40 @@ import BannerImg2 from "../assets/images/wide_2.jpg";
 ---
 
 <Layout title="Maverick Jewellery Official">
-	<main class="max-w-3x mx-auto py-12 min-h-screen bg-off-white">
-		<div class="container mx-auto px-2 md:px-0">
-			<div class="whitespace block h-10"></div>
-			<div class="mx-auto flex flex-col h-16 justify-center">
-				<div
-					class="md:text-xl text-lg text-center font-serif text-black tracking-wide"
-				>
-					[ TO BE CLASSIC IS TO BE YOURSELF ]
-				</div>
-			</div>
-			<div class="whitespace block h-14"></div>
-			<WideImage img={BannerImg1} />
-			<div class="whitespace block h-16"></div>
-			<div class="max-w-[85%] md:flex mx-auto md:prose">
-				<p class="text-xl text-center font-serif text-black">
-					{introduction}
-				</p>
-			</div>
-			<div class="whitespace block h-16"></div>
-			<Carousel imgs={carousel_imgs} />
-			<div class="whitespace block h-16"></div>
-			<WideImage img={BannerImg2} />
-			<div class="whitespace h-28"></div>
-			<Featured
-				heading="Butterfly"
-				description={featured_summary}
-				imgs={featured_imgs}
-			/>
-			<div class="whitespace block h-28"></div>
-			<div class="max-w-[85%] md:flex mx-auto md:prose">
-				<p class="text-xl text-center font-serif text-black">
-					{closing_summary}
-				</p>
+	<div class="container mx-auto px-2 md:px-0">
+		<div class="whitespace block h-10"></div>
+		<div class="mx-auto flex flex-col h-16 justify-center">
+			<div
+				class="md:text-xl text-lg text-center font-serif text-black tracking-wide"
+			>
+				[ TO BE CLASSIC IS TO BE YOURSELF ]
 			</div>
 		</div>
-	</main>
+		<div class="whitespace block h-14"></div>
+		<WideImage img={BannerImg1} />
+		<div class="whitespace block h-16"></div>
+		<div class="max-w-[85%] md:flex mx-auto md:prose">
+			<p class="text-xl text-center font-serif text-black">
+				{introduction}
+			</p>
+		</div>
+		<div class="whitespace block h-16"></div>
+		<Carousel imgs={carousel_imgs} />
+		<div class="whitespace block h-16"></div>
+		<WideImage img={BannerImg2} />
+		<div class="whitespace h-28"></div>
+		<Featured
+			heading="Butterfly"
+			description={featured_summary}
+			imgs={featured_imgs}
+		/>
+		<div class="whitespace block h-28"></div>
+		<div class="max-w-[85%] md:flex mx-auto md:prose">
+			<p class="text-xl text-center font-serif text-black">
+				{closing_summary}
+			</p>
+		</div>
+	</div>
 </Layout>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"

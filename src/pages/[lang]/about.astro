@@ -1,0 +1,76 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SideCard from "../../components/SideCard.astro";
+
+interface AboutContent {
+    lang: string;
+    title: string;
+    brand_title: string;
+    brand_description: string;
+    author_title: string;
+    author_description: string;
+}
+
+interface Props {
+    content: AboutContent;
+}
+
+export function getStaticPaths() {
+    const pages: Array<AboutContent> = [
+        {
+            lang: "en",
+            title: "About Us",
+            brand_title: "Brand Vision",
+            brand_description:
+                'MAVERICK was established in 2022 with a relentless pursuit to discover perfection amidst what the world defines as ordinary. We emerge from the saturated landscape of aesthetics, determined to stand out.\n  MAVERICK, meaning "unique" or "exceptional," symbolizes our presence in the current era of aesthetic saturation. Like a wildflower amidst a rose garden, it becomes difficult to distinguish whether it is the beauty of the rose or the uniqueness of the wildflower that captivates attention as each flower possesses its own distinct nature. MAVERICK firmly believes that only by staying true to ourselves can we truly achieve our own distinctive style',
+            author_title: "Creative Director: Lin Li",
+            author_description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue libero at purus facilisis, in ultricies ipsum blandit. Suspendisse sit amet neque cursus, finibus lorem quis, ullamcorper orci. Sed et gravida justo. Ut tempor tincidunt ante vel posuere. Curabitur in mollis est, et efficitur nunc. Nullam in egestas neque. Sed quis molestie lorem. Sed quis ante mattis, luctus eros sed, tempor sem. Phasellus dictum massa ultricies, iaculis diam vitae, hendrerit risus.",
+        },
+        {
+            lang: "cn",
+            title: "About Us",
+            brand_title: "设计理念",
+            brand_description:
+                "品牌创立于2022年力求在世界定义的平凡中寻找完美，在审美饱和化的现状中脱颖而生。MAVERICK意为“特别”在当今审美饱和化中，犹如在玫瑰园中的野花，便道不清是玫瑰美还是野花特别了。各花各有各花香。MAVERICK认为只有坚守态度，才能成就自己的风格",
+            author_title: "创意总监",
+            author_description: "Blah",
+        },
+    ];
+    return pages.map((content) => {
+        const l = content.lang;
+        return {
+            params: { lang: l },
+            props: { content },
+        };
+    });
+}
+
+import ProfileImg from "../../assets/images/profile.jpg";
+import AboutImg from "../../assets/images/about_3.jpg";
+
+const { lang } = Astro.params;
+const { content } = Astro.props;
+---
+
+<Layout title={content.title}>
+    <main class="max-w-3x mx-auto py-12 min-h-screen bg-off-white">
+        <div class="container mx-auto px-2 md:px-0">
+            <div class="whitespace block h-10"></div>
+            <div class="flex flex-col gap-12">
+                <SideCard
+                    title={content.brand_title}
+                    caption={content.brand_description}
+                    img={AboutImg}
+                    img_first={true}
+                />
+                <SideCard
+                    title={content.author_title}
+                    caption={content.author_description}
+                    img={ProfileImg}
+                    img_first={true}
+                />
+            </div>
+        </div>
+    </main>
+</Layout>
