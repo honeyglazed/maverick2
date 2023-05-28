@@ -1,24 +1,54 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/translations';
-import LanuguagePicker from './LanguagePicker.astro';
+import { getLangFromUrl, useTranslations } from "../i18n/translations";
+import LanuguagePicker from "./LanguagePicker.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const aboutLink = '/' + lang + '/about/';
-const homeLink = '/' + lang;
+const aboutLink = "/" + lang + "/about/";
+const brandLink = "/" + lang + "/brand/";
+const contactLink = "/" + lang + "/contact/";
+const homeLink = "/" + lang;
 ---
 
-<nav class='bg-off-white/80 fixed w-full z-20 top-0 left-0 border-b'>
-  <div class='max-w-screen-xl grid grid-cols-3 mx-auto p-4'>
-    <div class='flex flex-row gap-x-5 text-sm text-gray-800 items-center font-sans'>
-      <button class='rounded-full'><a href={aboutLink}>{t('nav.about')}</a></button>
-      <button class='rounded-full'>{t('nav.brand')}</button>
-      <button class='rounded-full'>{t('nav.contact')}</button>
+<nav class="bg-off-white/80 fixed w-full z-20 top-0 left-0 border-b">
+  <div class="max-w-screen-xl grid grid-cols-3 mx-auto p-4">
+    <button id="menu-toggle" class="md:hidden justify-self-start">
+      Menu
+      <div id="dropdown" class="hidden">
+        <ul>
+          <li class="pt-4"><a href={aboutLink}>{t("nav.about")}</a></li>
+          <li class="pt-4"><a href={brandLink}>{t("nav.brand")}</a></li>
+          <li class="pt-4"><a href={contactLink}>{t("nav.contact")}</a></li>
+        </ul>
+      </div>
+    </button>
+    <div
+      class="md:flex flex-row gap-x-5 text-sm text-gray-800 items-center font-sans hidden"
+    >
+      <button class="rounded-lg hover:underline underline-offset-4 decoration-2"
+        ><a href={aboutLink}>{t("nav.about")}</a></button
+      >
+      <button class="rounded-lg hover:underline underline-offset-4 decoration-2"
+        ><a href={brandLink}>{t("nav.brand")}</a></button
+      >
+      <button class="rounded-lg hover:underline underline-offset-4 decoration-2"
+        ><a href={contactLink}>{t("nav.contact")}</a></button
+      >
     </div>
-    <p class='font-serif text-center text-black font-bold col-start-2'><a href={homeLink}>MAVERICK</a></p>
-    <div class='col-start-3 justify-self-end'>
-      <LanuguagePicker/>
+    <p class="font-serif text-center text-black font-bold col-start-2">
+      <a href={homeLink}>MAVERICK</a>
+    </p>
+    <div class="col-start-3 justify-self-end">
+      <LanuguagePicker />
     </div>
   </div>
 </nav>
+
+<script>
+  var toggle = document.getElementById("menu-toggle");
+  toggle.addEventListener("click", function () {
+    var dropdown = document.getElementById("dropdown");
+    dropdown.classList.toggle("hidden");
+  });
+</script>

@@ -8,9 +8,9 @@ const defaultLanguage = 'en';
 const ui = {
     en: {
         'nav.home': 'Home',
-        'nav.about': 'About Us',
+        'nav.about': 'About',
         'nav.brand': 'Press Release',
-        'nav.contact': 'Contact Us',
+        'nav.contact': 'Contact',
     },
     cn: {
         'nav.home': 'Maverick',
