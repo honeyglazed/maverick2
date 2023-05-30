@@ -5,6 +5,7 @@ import LanuguagePicker from "./LanguagePicker.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+// TODO: Extract this out to make this a resuable component.
 const aboutLink = "/" + lang + "/about/";
 const brandLink = "/" + lang + "/brand/";
 const contactLink = "/" + lang + "/contact/";
