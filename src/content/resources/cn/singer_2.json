@@ -1,8 +1,13 @@
 {
+    "path": "resources/zhangliangying",
     "title": "张靓颖",
     "language": "cn",
     "description": "",
-    "thumbnail_img": "../../../assets/images/brand/singer_2_1.jpg",
-    "featured_img": "",
-    "gallery_imgs": []
+    "thumbnail_img": "../../../assets/images/brand/singer_2_2.jpg",
+    "featured_img": "../../../assets/images/brand/singer_1_wide.jpg",
+    "gallery_imgs": [
+        "../../../assets/images/brand/singer_2_0.jpg",
+        "../../../assets/images/brand/singer_2_1.jpg",
+        "../../../assets/images/brand/singer_2_3.jpg"
+    ]
 }

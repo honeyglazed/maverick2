@@ -7,7 +7,7 @@ const t = useTranslations(lang);
 
 // TODO: Extract this out to make this a resuable component.
 const aboutLink = "/" + lang + "/about/";
-const brandLink = "/" + lang + "/brand/";
+const resourcesLink = "/" + lang + "/resources/";
 const contactLink = "/" + lang + "/contact/";
 const homeLink = "/" + lang;
 ---
@@ -19,7 +19,7 @@ const homeLink = "/" + lang;
       <div id="dropdown" class="hidden">
         <ul>
           <li class="pt-4"><a href={aboutLink}>{t("nav.about")}</a></li>
-          <li class="pt-4"><a href={brandLink}>{t("nav.brand")}</a></li>
+          <li class="pt-4"><a href={resourcesLink}>{t("nav.brand")}</a></li>
           <li class="pt-4"><a href={contactLink}>{t("nav.contact")}</a></li>
         </ul>
       </div>
@@ -31,7 +31,7 @@ const homeLink = "/" + lang;
         ><a href={aboutLink}>{t("nav.about")}</a></button
       >
       <button class="rounded-lg hover:underline underline-offset-4 decoration-2"
-        ><a href={brandLink}>{t("nav.brand")}</a></button
+        ><a href={resourcesLink}>{t("nav.brand")}</a></button
       >
       <button class="rounded-lg hover:underline underline-offset-4 decoration-2"
         ><a href={contactLink}>{t("nav.contact")}</a></button
@@ -47,9 +47,9 @@ const homeLink = "/" + lang;
 </nav>
 
 <script>
-  var toggle = document.getElementById("menu-toggle");
+  var toggle = document.getElementById("menu-toggle")!;
   toggle.addEventListener("click", function () {
-    var dropdown = document.getElementById("dropdown");
+    var dropdown = document.getElementById("dropdown")!;
     dropdown.classList.toggle("hidden");
   });
 </script>

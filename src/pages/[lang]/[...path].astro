@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import ModalImage from "../../components/ModalImage.astro";
+import WideImage from "../../components/WideImage.astro";
+import type { ImageMetadata } from "astro";
+
+export async function getStaticPaths() {
+    const allResources = await getCollection("resources");
+    return allResources.map((resource) => ({
+        params: { lang: resource.data.language, path: resource.data.path },
+        props: { resource },
+    }));
+}
+
+const { resource } = Astro.props;
+---
+
+<Layout title="Resource">
+    <main class="max-w-3x mx-auto py-12 min-h-screen bg-off-white">
+        <div class="container mx-auto px-2 md:px-0">
+            <div class="flex flex-col items-center">
+                <WideImage img={resource.data.featured_img}/>
+                <p class="text-2xl font-serif text-center mt-8">
+                    {resource.data.title}
+                </p>
+                <p class="prose font-serif text-center text-xl m-8">
+                    {resource.data.description}
+                </p>
+		        <div class="whitespace block h-16"></div>
+                <div class="grid grid-cols-1 md:grid-flow-col md:auto-cols-fr gap-8">
+                    {
+                        resource.data.gallery_imgs.map((img: ImageMetadata) => (
+                            <ModalImage img={img} />
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
