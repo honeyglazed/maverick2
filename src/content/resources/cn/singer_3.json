@@ -1,0 +1,15 @@
+{
+    "path": "resources/lukeran",
+    "title": "陆柯燃",
+    "language": "cn",
+    "description": "",
+    "thumbnail_img": "../../../assets/images/brand/singer_3_3.jpg",
+    "featured_img": "../../../assets/images/brand/singer_3_wide.jpg",
+    "gallery_imgs": [
+        "../../../assets/images/brand/singer_3_0.jpg",
+        "../../../assets/images/brand/singer_3_1.jpg",
+        "../../../assets/images/brand/singer_3_2.jpg",
+        "../../../assets/images/brand/singer_3_3.jpg",
+        "../../../assets/images/brand/singer_3_4.jpg"
+    ]
+}

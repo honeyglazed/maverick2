@@ -9,6 +9,12 @@ export interface Props {
 const { img } = Astro.props;
 ---
 
+<style>
+    img {
+        @apply rounded-3xl drop-shadow-lg object-cover
+    }
+</style>
+
 <modal-image>
 	<Image src={img} alt={"at"} width={500} />
     <div id="modal" class="hidden absolute inset-0 z-10 w-full h-full bg-gray-400/75">

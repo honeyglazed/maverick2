@@ -1,0 +1,15 @@
+{
+    "path": "resources/lukeran",
+    "title": "Keran Lu",
+    "language": "en",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat urna non arcu accumsan, eu rutrum nisi porttitor. Nunc vel elit nec quam sollicitudin facilisis quis eget ipsum. Etiam dignissim elit eu nunc eleifend, eu lobortis massa ultricies. Pellentesque tempus lacus enim, sit amet vulputate dui semper eget. Aliquam varius vehicula suscipit. Curabitur semper id sapien vitae consectetur. Pellentesque commodo risus dolor, quis porta enim fringilla eget. Aenean aliquet erat non consequat mattis.",
+    "thumbnail_img": "../../../assets/images/brand/singer_3_3.jpg",
+    "featured_img": "../../../assets/images/brand/singer_3_wide.jpg",
+    "gallery_imgs": [
+        "../../../assets/images/brand/singer_3_0.jpg",
+        "../../../assets/images/brand/singer_3_1.jpg",
+        "../../../assets/images/brand/singer_3_2.jpg",
+        "../../../assets/images/brand/singer_3_3.jpg",
+        "../../../assets/images/brand/singer_3_4.jpg"
+    ]
+}

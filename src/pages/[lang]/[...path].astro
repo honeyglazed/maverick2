@@ -28,7 +28,7 @@ const { resource } = Astro.props;
                     {resource.data.description}
                 </p>
 		        <div class="whitespace block h-16"></div>
-                <div class="grid grid-cols-1 md:grid-flow-col md:auto-cols-fr gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {
                         resource.data.gallery_imgs.map((img: ImageMetadata) => (
                             <ModalImage img={img} />

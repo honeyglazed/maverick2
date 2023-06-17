@@ -1,0 +1,21 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+    return [
+        {params: { lang: 'en' }},
+        {params: { lang: 'cn' }},
+    ];
+}
+
+---
+
+<Layout title="Collections">
+    <main class="max-w-3x mx-auto py-12 min-h-screen bg-off-white">
+        <div class="container mx-auto px-2 md:px-0">
+            <p>F/W 2022 [Butterfly]</p>
+            <p>F/W 2022 [Butterfly]</p>
+            <p>F/W 2022 [Butterfly]</p>
+        </div>
+    </main>
+</Layout>

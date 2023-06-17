@@ -10,6 +10,7 @@ const aboutLink = "/" + lang + "/about/";
 const resourcesLink = "/" + lang + "/resources/";
 const contactLink = "/" + lang + "/contact/";
 const homeLink = "/" + lang;
+const collectionsLink = "/" + lang + "/collections/";
 ---
 
 <nav class="bg-off-white/80 fixed w-full z-20 top-0 left-0 border-b">
@@ -20,6 +21,7 @@ const homeLink = "/" + lang;
         <ul>
           <li class="pt-4"><a href={aboutLink}>{t("nav.about")}</a></li>
           <li class="pt-4"><a href={resourcesLink}>{t("nav.brand")}</a></li>
+          <li class="pt-4"><a href={collectionsLink}>{t("nav.collections")}</a></li>
           <li class="pt-4"><a href={contactLink}>{t("nav.contact")}</a></li>
         </ul>
       </div>
@@ -33,6 +35,11 @@ const homeLink = "/" + lang;
       <button class="rounded-lg hover:underline underline-offset-4 decoration-2"
         ><a href={resourcesLink}>{t("nav.brand")}</a></button
       >
+      <div class="group relative">
+        <button class="rounded-lg hover:underline underline-offset-4 decoration-2"
+          ><a href={collectionsLink}>{t("nav.collections")}</a></button
+        >
+      </div>
       <button class="rounded-lg hover:underline underline-offset-4 decoration-2"
         ><a href={contactLink}>{t("nav.contact")}</a></button
       >

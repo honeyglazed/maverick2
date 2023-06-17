@@ -14,15 +14,15 @@ const img_pos = img_first ? 'order-first' : 'order-last';
 const caption_pos = img_first ? 'order-last' : 'order-first';
 ---
 
-<div class='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
+<div class='grid grid-cols-1 md:grid-cols-2 gap-2 items-center'>
     <div class:list={['mx-auto', img_pos]}>
-        <Image class='rounded-2xl object-contain h-3/4 w-auto md:w-3/4' src={img} alt='side card picture' />
+        <Image class='rounded-2xl object-contain h-3/4 w-auto md:w-3/4 mx-auto' src={img} alt='side card picture' />
     </div>
     <div class:list={['prose', caption_pos]}>
         <p class='font-sans prose-2xl mb-2 underline underline-offset-8'>
             {title}
         </p>
-        <p class='font-serif prose-stone text-xl'>
+        <p class='font-serif prose-stone text-xl font-medium'>
             {caption}
         </p>
     </div>
