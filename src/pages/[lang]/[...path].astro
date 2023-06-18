@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 const { resource } = Astro.props;
-const modal_class = resource.data.gallery_imgs.length == 1 ? "col-start-2" : "";
+const modal_class = resource.data.gallery_imgs.length == 1 ? "col-span-3" : "";
 ---
 
 <Layout title="Resource">
