@@ -9,30 +9,26 @@ export function getStaticPaths() {
 }
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
 const allResources = await getCollection("resources", ({ data }) => {
     return data.language == lang;
 });
 
-const baseUrl = Astro.url.host + '/' + lang + '/';
-
 ---
 
-<Layout title="Brand">
-    <main class="max-w-3x mx-auto py-12 min-h-screen bg-off-white">
-        <div class="container mx-auto px-2 md:px-0">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {
-                    allResources.map((resource) => (
+<Layout title="Maverick Jewellery Official | Brand">
+    <div class="container mx-auto px-2 md:px-0">
+        <div class="columns-1 md:columns-3 gap-8 mt-8">
+            {
+                allResources.map((resource) => (
+                    <div class="mb-8 flex flex-wrap">
                         <Card
                             title={resource.data.title}
                             img={resource.data.thumbnail_img}
-                            href={'/' + lang + '/' + resource.data.path}
+                            href={"/" + lang + "/" + resource.data.path}
                         />
-                    ))
-                }
-            </div>
+                    </div>
+                ))
+            }
         </div>
-    </main>
+    </div>
 </Layout>

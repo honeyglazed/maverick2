@@ -11,14 +11,27 @@ export interface Props {
 const { href, title, img } = Astro.props;
 ---
 
-<m-card class="relative hover:scale-105 ease-out duration-300 hover:cursor-pointer" data-href={href}>
-	<Image src={img} alt={"at"} width={500} />
-	<div class="m-2 z-10 flex place-items-end inset-0 absolute transition-opacity opacity-0 hover:opacity-100">
-		<p
-			class="grow rounded-lg p-2 text-center text-black font-sans text-xl bg-white/50"
+<style>
+	img {
+		@apply rounded-xl;
+	}
+</style>
+
+<m-card
+	class="hover:scale-105 ease-out duration-300 hover:cursor-pointer"
+	data-href={href}
+>
+	<div class="relative">
+		<Image src={img} alt={"at"} />
+		<div
+			class="m-2 z-10 flex place-items-end inset-0 absolute transition-opacity opacity-0 hover:opacity-100"
 		>
-			{title}
-		</p>
+			<p
+				class="grow rounded-lg p-1 text-center text-black font-serif text-bold text-2xl bg-white/50"
+			>
+				{title}
+			</p>
+		</div>
 	</div>
 </m-card>
 
@@ -28,12 +41,12 @@ const { href, title, img } = Astro.props;
 			super();
 			if (this.dataset.href) {
 				const href: string = this.dataset.href;
-				this.onclick = ((event) => { 
-					window.location.assign(href); 
-				});
+				this.onclick = (event) => {
+					window.location.assign(href);
+				};
 			}
 		}
 	}
 
-	customElements.define('m-card', Card);
+	customElements.define("m-card", Card);
 </script>
