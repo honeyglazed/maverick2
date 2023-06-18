@@ -8,7 +8,8 @@ const resourceCollection = defineCollection({
         language: z.enum(['en', 'cn']),
         description: z.string(),
         thumbnail_img: image(),
-        featured_img: image(),
+        featured_img: image().optional(),
+        featured_video: z.string().optional(),
         gallery_imgs: z.array(image())
     })
 })
