@@ -14,6 +14,7 @@ export async function getStaticPaths() {
 }
 
 const { resource } = Astro.props;
+const modal_class = resource.data.gallery_imgs.length == 1 ? "col-start-2" : "";
 ---
 
 <Layout title="Resource">
@@ -31,7 +32,9 @@ const { resource } = Astro.props;
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {
                         resource.data.gallery_imgs.map((img: ImageMetadata) => (
-                            <ModalImage img={img} />
+                            <div class:list={modal_class}>
+                                <ModalImage img={img} />
+                            </div>
                         ))
                     }
                 </div>
