@@ -11,10 +11,10 @@ const { img } = Astro.props;
 
 <style>
     img {
-        @apply rounded-3xl drop-shadow-lg object-cover
+        @apply rounded-3xl drop-shadow-lg
     }
 </style>
 
-<div class="mx-auto h-auto max-w-full">
+<div class="mx-auto">
     <Image src={img} alt={"picture"}/>
 </div>
